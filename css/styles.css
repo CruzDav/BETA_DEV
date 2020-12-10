@@ -63,18 +63,41 @@ body{
     transition: all 300ms;   /* efecto */
     margin-left: 20px;
 
-    position: absolute;
+    position: relative;
     margin: 31px;
 }
 
-.logo ,.gear{
+.logo .gear{
+    display: block;
     font-size: 30px;
-    /* margin-left: 26px; */
     margin: 30px auto;
     margin-left: 55px;
-    
 
+    position: absolute;
+    left: 0px;
+    top: -25px;
+    right: 170px;
+
+    /* ANIMATIONS */
+    
+    animation-name: rotation_gear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
+
+@keyframes rotation_gear {
+    from{
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+/*##########################################################*/
+
 
 .logo h3{
 font-size: 30px;
@@ -86,62 +109,199 @@ transition: all 300ms;   /* efecto */
 }
 
 /* MENU */
-
-#menu{
-float: right;
-height: 70px;
-background-color: transparent;
-margin: 17px auto;
-position: absolute;
-left: 350px;
+.navegador{
+    background-color: transparent;
+    height: 103px;
+    width: 100%;
+    position: relative;
+    left: 250px;
+    
 }
-
-#menu ul li{
-margin: 0px 38px 0px 38px;
-color: white;
-display: inline-block;   /* efecto de alinear unos con otros */
-font-size: 24px;
-margin-top: 19px;
-
+.navegador .subsubhogar{
+    padding: 30px 31px 23px 24px;
 
 }
-
-#menu ul li a {
-    color: black;
-    font-size: 24px;
-    letter-spacing: 1px;    /* letras espacio */
-    display: block;         /* se comporta como un bloque */
-    text-decoration: none;  /* quita subrayado */
-    transition: all 200ms;   /* efecto */
-
-}
-
-#menu ul li a:hover{
-color: #33bcf9;
-transform: scale(1.2 , 1.2);  /* efecto de expandor con el puntero*/
-}
-
-#menu .sub_home {
-    position: absolute;
-    top: 86px;
-    width: 270px;
-    left: -6px;
-    height: 200px;
+.navegador .subsubhogar >li {
+    padding-bottom: 30px;
     background-color: #fff;
 }
 
-#menu .sub_list{
-background-color: chartreuse;
-margin-left: 41px;
-margin-top: 33px;
-line-height: 47px;
+.navegador .subsubhogar > ul >li > .dezli_casa  {
+
+    left: -22px;
+
+
+    text-decoration: none;
+    list-style: none;
+    color :#1a1b1e;
+    /* transition: all 0.5s ease-out 0s; */
+
+    display: flex;
+
+    position: relative;
+
+    transition:  all 0.6s ;
+
+
+}
+
+.navegador .subsubhogar > ul >li > a {
+    text-decoration: none;
+    list-style: none;
+    color :#1a1b1e;
+    /* transition: all 0.5s ease-out 0s; */
+
+    display: block;
+    position: relative;
+
+    transition:  all 0.6s ;
+}
+
+
+.navegador .subsubhogar > ul >li > .dezli_casa2 {
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+    color :#1a1b1e;
+    display: flex;
+    position: initial;
+    overflow: hidden;   /* oculta estilos fuera de logo */
+    transition:  all 0.6s ;
+    
+    right: 16px;
+
+}
+
+.navegador .subsubhogar > ul >li > .dezli_casa2::before {
+    content: "//";
+    /* display: inline-block; */
+    color :#1a1b1e;
+    display: block;
+    position: inherit;
+    overflow: hidden;   /*oculta estilos fuera de logo  */
+    /* transition:  all 0.6s ; */
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    /* visibility: hidden; */
+    opacity: 0; 
+    box-sizing: inherit;
+
 
 }
 
 
-#menu  .casa_1 {
-    color: red;
+.navegador > nav{
+    position: absolute;
+    left: 76px;
+    top: 29px;
+    /* background-color: aliceblue; */
+    width: 900px;
 }
+
+.navegador nav  ul {
+    margin-bottom: -5.6px;
+    height: 65px;
+    font-size: 23px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+ 
+ }
+
+
+
+.navegador > nav > ul >li {
+    display: inline-block;
+    padding: 0px 30px 36px 4px;
+    
+}
+
+.navegador > nav > ul >li .subhogar{
+    overflow: hidden;   /* oculta estilos fuera de logo */
+    background-color: #fff;
+    padding: 10px;
+    position: absolute;  
+    top: 95px;
+    width: 270px;
+    /* left: 0px; */
+    height: 228px;
+
+
+    /* display:none; */
+    /* margin-top: 50px;*/
+
+    transition:  0.4s all ease ; 
+
+    
+    opacity: 0; 
+    visibility: hidden; 
+
+}
+
+.navegador nav  ul li .subhogar li{
+    text-decoration: none;
+    list-style: none;
+    line-height: 61px;
+}
+
+.navegador >nav >ul> li {
+   /* cursor: pointer; */
+
+   /*transition: all 300ms;   efecto */
+   overflow: hidden;   /* oculta estilos fuera de logo */
+}
+
+.navegador  nav  ul li  #hogar{
+    display: block;
+    color :#1a1b1e;
+    font-size: 22px;
+    padding: 8px 1px 38px 36px;
+    text-decoration: none;
+    transition:  all 0.3s ;
+    overflow: hidden;   /* oculta estilos fuera de logo */
+
+}
+
+.navegador >nav> ul> li:hover  #hogar {
+    color: #888a41;
+    transform: scale(1.2 , 1.2);
+    /* opacity: 1; */
+}
+
+.navegador nav  ul li:hover .subhogar {
+    opacity: 1;
+    display: flex;
+    /* transform: translateY(0px); */
+    /* margin-top: -50px;
+    transition:  0.3s all ease ; */
+    top: 74px;
+    z-index: 1;
+    visibility: visible;
+
+}
+
+.navegador nav  ul li .subhogar .subsubhogar  ul  li  .dezli_casa:hover {
+
+    color: rgb(58, 242, 119);
+    /* transform: scale(1.2 1.2); */
+    right: -15px;
+}
+
+.navegador nav  ul li .subhogar .subsubhogar  ul  li  .dezli_casa2:hover{
+
+    color: rgb(58, 242, 119);
+    /* transform: scale(1.2 1.2); */
+    right: -15px;
+  
+}
+
+.navegador nav  ul li .subhogar > .subsubhogar > ul > li  > .dezli_casa2:hover:before {
+   opacity: 1;
+    visibility: visible;
+}
+
+/* ################################################## */
+
 
 
 /* BANNER */
@@ -161,7 +321,7 @@ line-height: 47px;
 }
 .banner h1 {
     position: absolute;
-    top: 302px;
+    top: 350px;
     left: 91px;
     width: 1000px;
     /* margin: 21px auto;
@@ -172,12 +332,14 @@ line-height: 47px;
     /* margin: 27px auto; */
     font-weight: bolder;      /* centrar texto */  
     /* text-shadow: 2px 2px 1px black;  sombra derecha , abajo , difuminacion */
+    line-height: 93px;
+
 }
 
 .banner h3{
     
     position: absolute;
-    top: 532px;
+    top: 545px;
     /* right: 0; */
     width: 700px;
     left: 91px;
@@ -191,7 +353,7 @@ line-height: 47px;
 .banner h2{
     
     position: absolute;
-    top: 270px;
+    top: 294px;
     width: 700px;
     left: 91px;
     font-family: sans-serif;
@@ -202,7 +364,7 @@ line-height: 47px;
 }
 .boton_Aprende{ 
         position: absolute;
-        top: 610px;
+        top: 652px;
         width: 170px;
         left: 91px;
         height: 60px;
@@ -224,17 +386,160 @@ line-height: 47px;
         background-color: #1883ba;
         border: 2px solid #313c42;
       }
+
+
       .boton_Aprende:hover{
         color: #ffffff;
-        background-color: #113446;
+        background: linear-gradient(  #6acdd7 0% , #026ab5 100% );
+
+        /* background-color: #113446; */
         text-decoration: none;
       
 }
 
 
 
+/*##########################################################*/
+
+
+/* Technology's browser */
+
+.technologyes{
+    background-color: #f8f8f8;
+    height: 118px;
+    /* padding: 15px; */
+
+}
+
+.sub_tech{
+    background-color: #f8f8f8;
+    padding: 0px 6px 0px 108px;
+    width: 1200px;
+    position: relative;
+    display: inline-block;
+    top: 39px;
+    left: 79px;
+    line-height: 30px;
+
+
+}
+
+.info_t{
+    display: inline-block;
+    background-color: #f8f8f8;
+    /* float: left; */
+    width: 140px;
+    height: 45px;
+    margin: auto 20px;
+    position: relative;
+    font-family:sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* float: left; */
+    transition: all 0.5s;
+
+}
+#info_tecnologias .technologyes .sub_tech .info_t {
+    transition: all 0.5s;
+    opacity: 0.4;
+    filter: grayscale(0.9999);
+}
+#info_tecnologias .technologyes .sub_tech .info_t:hover {
+    
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+#info_tecnologias .technologyes .sub_tech .info_t:hover img{
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+#info_tecnologias .technologyes .sub_tech .info_t:hover .texto{
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+#info_tecnologias .technologyes .sub_tech .info_t img {
+    width: 45px;
+    height: 40px;
+    opacity: 0.4;
+    filter: grayscale(0.9999);
+    transition: all 0.5s;
+    float: left;;
+}
+#info_tecnologias .technologyes .sub_tech .info_t .texto {
+    color: #1a1c1f;
+    transition: all 0.5s;
+    text-decoration: none;
+    filter: contrast(0.5);
+    opacity: 1;
+    line-height: 45px;
+
+}
+/* 
+
+#info_tecnologias .technologyes .sub_tech .info_t img:hover {
+   
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+
+
+
+
+
+#info_tecnologias .technologyes .sub_tech .info_t .texto:hover{
+  
+    filter: contrast(1);
+    opacity: 1;
+
+} */
+
+
+/*##########################################################*/
+
+
 
 /* CARDS */
+
+.section_election{
+    background: rgb(237, 100, 225);
+    height: 800px;
+
+}
+.section_election .conten_title{
+    height: 200px;
+    line-height: 31px;
+    padding: 127px 200px 4px 200px;
+    margin: auto;
+    width: 606px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.section_election .conten_title h3{
+   font-size: 17px;
+   font-family: sans-serif,apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+.section_election .conten_title h2{
+    font-size: 38px;
+    line-height: 51px;
+    letter-spacing: -1px;
+
+   font-family: sans-serif,apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+ }
+ 
+
+
+
+.cards{
+    /* background-color: blueviolet; */
+    float: left;
+}
+
 .icon{
     font-family: "WebSymbolsRegular";
     font-size: 46px;
@@ -244,8 +549,8 @@ line-height: 47px;
 }
 .desing_card {
 
-    border: 1px solid #ccc ;
-    box-shadow: 1px 1px 2px #ddd;
+    /* border: 1px solid #ccc ;
+    box-shadow: 1px 1px 2px #ddd; */
     width: 205px;
     height: 305px;
     margin: 16px;
@@ -254,8 +559,16 @@ line-height: 47px;
     float: left;
     overflow: hidden;   /* oculta estilos fuera de logo */
     cursor: pointer;    /* manito*/
-    background: white;
+    background: #00b7eb;
+
+
+    transition: all 0.5s;
 }
+
+.desing_card:hover{
+    background-color: rgb(79, 177, 223);
+}
+
 
 .subject {
     color: #01538c;
@@ -274,6 +587,12 @@ line-height: 47px;
     padding-top: 14px;
 
 }
+
+
+
+
+/*##########################################################*/
+
 
 
 /* BARRA LATERAL ASIDE */
